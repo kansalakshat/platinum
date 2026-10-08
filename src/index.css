@@ -358,9 +358,15 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
   background: var(--metal-gold-bright); box-shadow: 0 8px 18px -10px rgba(11,21,32,.7);
 }
 .footer-bottom .brand-mark { width: 64px; height: 64px; }
+/* sidebar logo: larger medallion and wordmark */
+.sidebar .brand-mark { width: 108px; height: 108px; padding: 4px; margin-bottom: 14px; }
+.sidebar .brand b { font-size: 28px; }
+.sidebar .brand small { font-size: 9.5px; margin-top: 8px; }
 @media (max-width: 960px) {
   .sidebar .brand { flex-direction: row; gap: 10px; }
-  .sidebar .brand-mark { width: 44px; height: 44px; padding: 2px; margin: 0; }
+  .sidebar .brand-mark { width: 54px; height: 54px; padding: 2px; margin: 0; }
+  .sidebar .brand b { font-size: 24px; }
+  .sidebar .brand small { font-size: 8.5px; margin-top: 6px; }
 }
 
 /* ---------- Royal finish: textures, jali lattice, gilt ornaments ---------- */
