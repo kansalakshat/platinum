@@ -133,8 +133,8 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .brand small { margin-top: 6px; font: 500 8.5px/1 "Jost", sans-serif; letter-spacing: .42em; display: flex; gap: 8px; align-items: center; }
 .brand small::before, .brand small::after { content: ""; width: 14px; height: 1px; background: var(--metal-gold); }
 
-.nav { display: flex; flex-direction: column; gap: 14px; margin-top: 72px; }
-.nav a { font-size: 15px; line-height: 1.35; color: var(--heading); width: fit-content; position: relative; transition: color .3s; }
+.nav { display: flex; flex-direction: column; gap: 16px; margin-top: 56px; }
+.nav a { font-size: 18px; line-height: 1.35; color: var(--heading); width: fit-content; position: relative; transition: color .3s; }
 .nav a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: var(--metal-gold); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
 .nav a:hover::after, .nav a.active::after { transform: scaleX(1); }
 .nav a.active { font-weight: 400; }
@@ -168,7 +168,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
     align-items: center; justify-content: center; gap: 24px;
     background: var(--bg); opacity: 0; pointer-events: none; transition: opacity .35s;
   }
-  .nav a { font-size: 20px; }
+  .nav a { font-size: 24px; }
   .sidebar.menu-open .nav { opacity: 1; pointer-events: auto; }
 }
 
