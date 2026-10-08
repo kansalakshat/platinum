@@ -16,7 +16,7 @@ export default function Projects() {
       <div className="types-grid">
         {types.map(type => (
           <a key={type} href="#types" className="type metal-frame reveal">
-            <div className="ph"><img src={`/projects/${images[type]}-sm.webp`} alt="" loading="lazy" /></div>
+            <div className="ph"><img loading="lazy" decoding="async" src={`/projects/${images[type]}-sm.webp`} alt="" /></div>
             {type}
           </a>
         ))}

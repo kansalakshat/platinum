@@ -10,6 +10,17 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const go = step => setIndex(i => (i + step + slides.length) % slides.length);
+  // slides get their photo only when shown or up next, so the first photo downloads alone.
+  // The next one waits for the page's load event, then stays one ahead.
+  const [loaded, setLoaded] = useState(() => new Set([0]));
+  useEffect(() => {
+    setLoaded(s => s.has(index) ? s : new Set(s).add(index));
+    const next = (index + 1) % slides.length;
+    const addNext = () => setLoaded(s => s.has(next) ? s : new Set(s).add(next));
+    if (document.readyState === 'complete') return addNext();
+    addEventListener('load', addNext, { once: true });
+    return () => removeEventListener('load', addNext);
+  }, [index]);
 
   // auto-advance every 5s; restarts whenever the slide changes (incl. arrow clicks)
   useEffect(() => {
@@ -23,7 +34,7 @@ export default function Hero() {
       <div className="slider metal-frame">
         {slides.map(([name, city, src], i) => (
           <div key={name} className={'slide ph' + (i === index ? ' active' : '')} aria-hidden={i !== index}>
-            <img src={src} alt={name} loading={i ? 'lazy' : 'eager'} fetchpriority={i ? undefined : 'high'} />
+            {loaded.has(i) && <img decoding="async" fetchpriority={i ? undefined : 'high'} src={src} alt={name} />}
             <div className="caption"><b>{name}</b><span>{city}</span></div>
           </div>
         ))}

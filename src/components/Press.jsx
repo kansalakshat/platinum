@@ -12,7 +12,7 @@ export default function Press() {
       <div className="press-grid">
         {articles.map(([text, photo]) => (
           <article key={text} className="press-card reveal">
-            <div className="ph"><img src={`/projects/${photo}-sm.webp`} alt="" loading="lazy" /></div>
+            <div className="ph"><img loading="lazy" decoding="async" src={`/projects/${photo}-sm.webp`} alt="" /></div>
             <p>{text}</p>
             <a href="#press">READ MORE</a>
           </article>

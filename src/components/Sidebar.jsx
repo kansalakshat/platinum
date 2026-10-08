@@ -13,7 +13,7 @@ const links = [
 
 export function Brand() {
   return <>
-    <img className="brand-mark" src="/logo-mark.webp" alt="" width="72" height="72" />
+    <img className="brand-mark" width="72" height="72" src="/logo-mark.webp" alt="" />
     <span className="brand-text"><b className="metal-silver-text">PLATINUM</b><small className="metal-gold-text">INFRASTRUCTURE</small></span>
   </>;
 }

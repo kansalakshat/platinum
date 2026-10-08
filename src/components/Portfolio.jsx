@@ -21,7 +21,7 @@ export default function Portfolio() {
           <div className="strip">
             {p.photos.map(([w, h], i) => (
               <button key={i} onClick={() => show(p, i)} aria-label={`${p.name}, photo ${i + 1} of ${p.photos.length}`}>
-                <img src={photoSrc(p, i, true)} width={w} height={h} loading="lazy" decoding="async" alt="" />
+                <img loading="lazy" decoding="async" width={w} height={h} src={photoSrc(p, i, true)} alt="" />
               </button>
             ))}
           </div>
