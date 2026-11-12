@@ -8,6 +8,10 @@
   --beige: #EFEAE5;
   --charcoal: #64605B;
 
+  /* fonts match narsi.in: Optima headings, Inter text. Optima is licensed (Mac/iOS ship it); Marcellus is the free fallback */
+  --font-head: Optima, "Marcellus", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
   /* light theme: 60% ivory/beige, 25% navy, 10% blue-grey, 5% gold */
   --bg: #FFFFFF;
   --bg-alt: var(--beige);
@@ -73,11 +77,11 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 300 17px/1.75 "Jost", system-ui, sans-serif;
+  font: 400 17px/1.75 var(--font-body);
   transition: background .4s, color .4s;
   overflow-x: hidden;
 }
-h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; color: var(--heading); font-weight: 500; line-height: 1.1; margin: 0; }
+h1, h2, h3 { font-family: var(--font-head); color: var(--heading); font-weight: 500; line-height: 1.1; margin: 0; }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 section { padding: clamp(56px, 8vw, 110px) 0; }
@@ -113,7 +117,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .ph::after {
   content: attr(data-label);
   position: absolute; left: 16px; top: 14px;
-  font: 500 11px/1 "Jost", sans-serif; letter-spacing: .2em; text-transform: uppercase;
+  font: 500 11px/1 var(--font-body); letter-spacing: .2em; text-transform: uppercase;
   color: var(--ph-ink); opacity: .7;
 }
 .ph > img, .ph > video { width: 100%; height: 100%; object-fit: cover; }
@@ -129,8 +133,8 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .main { margin-left: 230px; padding-right: clamp(16px, 3vw, 40px); }
 
 .brand { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; color: var(--heading); }
-.brand b { font: 600 24px/1 "Cinzel", serif; letter-spacing: .06em; }
-.brand small { margin-top: 6px; font: 500 8.5px/1 "Jost", sans-serif; letter-spacing: .42em; display: flex; gap: 8px; align-items: center; }
+.brand b { font: 600 24px/1 var(--font-head); letter-spacing: .06em; }
+.brand small { margin-top: 6px; font: 500 8.5px/1 var(--font-body); letter-spacing: .42em; display: flex; gap: 8px; align-items: center; }
 .brand small::before, .brand small::after { content: ""; width: 14px; height: 1px; background: var(--metal-gold); }
 
 .nav { display: flex; flex-direction: column; gap: 16px; margin-top: 56px; }
@@ -186,7 +190,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .caption b {
   display: block; padding: 12px 20px; background: var(--metal-gold-bright); color: var(--navy);
   box-shadow: 0 12px 28px -12px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.6);
-  font: 500 15px/1.3 "Jost", sans-serif; letter-spacing: .22em; text-transform: uppercase;
+  font: 500 15px/1.3 var(--font-body); letter-spacing: .22em; text-transform: uppercase;
 }
 .caption span { display: block; margin-top: 8px; font-size: 15px; }
 .arrow {
@@ -215,7 +219,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .roots-grid p { margin: 0 0 22px; text-align: justify; color: var(--heading); }
 .roots-grid p:last-child { margin: 0; }
 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 44px 24px; text-align: center; }
-.stat .num { font: 500 clamp(46px, 5vw, 70px)/1 "Cormorant Garamond", serif; font-variant-numeric: lining-nums; color: var(--heading); }
+.stat .num { font: 500 clamp(46px, 5vw, 70px)/1 var(--font-head); font-variant-numeric: lining-nums; color: var(--heading); }
 .stat .num sup { font-size: .5em; vertical-align: top; margin-left: 2px; }
 .roots-grid .stat p { margin: 10px auto 0; max-width: 18ch; line-height: 1.5; text-align: center; color: var(--text); }
 @media (max-width: 860px) {
@@ -264,7 +268,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .press-card { display: grid; gap: 16px; align-content: start; }
 .press-card .ph { aspect-ratio: 4/3; border-radius: 12px; }
 .press-card p { margin: 0; }
-.press-card a { font: 500 12px/1 "Jost"; letter-spacing: .24em; color: var(--heading); padding-bottom: 6px; width: fit-content; background: var(--metal-gold) no-repeat bottom / 100% 1px; }
+.press-card a { font: 500 12px/1 var(--font-body); letter-spacing: .24em; color: var(--heading); padding-bottom: 6px; width: fit-content; background: var(--metal-gold) no-repeat bottom / 100% 1px; }
 .press-card a:hover { color: var(--accent); }
 @media (max-width: 860px) { .press-grid { grid-template-columns: 1fr; max-width: 520px; } }
 
@@ -280,7 +284,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 }
 .footer-top { display: grid; grid-template-columns: 2.4fr 1fr; gap: 44px; }
 .footer h2 { color: var(--band-text); font-size: clamp(38px, 4vw, 52px); padding-bottom: 18px; margin-bottom: 28px; background: var(--metal-gold) no-repeat bottom / 100% 1px; }
-.footer h4 { margin: 0 0 14px; font: 500 12px/1.4 "Jost"; letter-spacing: .2em; text-transform: uppercase; color: var(--champagne); }
+.footer h4 { margin: 0 0 14px; font: 500 12px/1.4 var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: var(--champagne); }
 .footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
 .footer a:hover { color: var(--champagne); }
@@ -335,7 +339,7 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
 .lightbox .arrow { color: var(--ivory); background: rgba(11,21,32,.5); border-radius: 50%; }
 .lightbox .close { position: fixed; top: 14px; right: 18px; width: 44px; height: 44px; border: 0; background: none; color: var(--ivory); font-size: 34px; line-height: 1; cursor: pointer; }
 .logos .ph { display: grid; place-items: center; padding: 8px 12px; text-align: center; }
-.logos .ph span { font: 600 13px/1.3 "Cinzel", serif; letter-spacing: .06em; color: var(--navy); }
+.logos .ph span { font: 600 13px/1.3 var(--font-head); letter-spacing: .06em; color: var(--navy); }
 
 /* ---------- Hero on photos: readable arrows, landscape crop on small screens ---------- */
 .hero .arrow { background: rgba(11,21,32,.35); border-radius: 50%; color: var(--ivory); }
