@@ -228,29 +228,6 @@ section { padding: clamp(56px, 8vw, 110px) 0; }
   .roots-grid p { text-align: left; }
 }
 
-/* ---------- Project types ---------- */
-.types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.type {
-  border-radius: 18px; padding: 17px 17px 19px; overflow: hidden;
-  display: grid; gap: 14px; text-align: center; color: var(--heading);
-  transition: transform .4s, box-shadow .4s;
-}
-.type:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -18px var(--navy); }
-/* light sweep across the card on hover */
-.type::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(110deg, transparent 35%, rgba(255,246,226,.45) 50%, transparent 65%);
-  transform: translateX(-100%); transition: transform .9s ease;
-}
-.type:hover::after { transform: translateX(100%); }
-.type .ph { aspect-ratio: 16/10; border-radius: 10px; }
-@media (max-width: 860px) { .types-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
-@media (max-width: 520px) {
-  .types-grid { gap: 12px; }
-  .type { padding: 8px 8px 12px; gap: 8px; border-radius: 12px; font-size: 15px; }
-  .type .ph { border-radius: 6px; }
-}
-
 /* ---------- Clients ---------- */
 .logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 /* brushed-silver plates */
@@ -425,9 +402,6 @@ body { background: var(--bg); }
 .roots .stat .num { color: var(--band-text); }
 .roots-grid .stat p { color: var(--champagne); }
 @media (max-width: 860px) { .roots::before { inset: 6px; border-radius: 14px; } }
-
-/* project cards: gilded card stock */
-.type { background: linear-gradient(160deg, color-mix(in srgb, var(--champagne) 26%, transparent), transparent 55%), var(--grain), var(--bg-alt); box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 18px 36px -30px var(--navy); }
 
 /* portfolio + press photos: hairline gold mount */
 .strip button { box-shadow: inset 0 0 0 1px rgba(168,149,124,.5); }

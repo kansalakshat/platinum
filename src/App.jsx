@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar.jsx';
 import Hero from './components/Hero.jsx';
 import Roots from './components/Roots.jsx';
-import Projects from './components/Projects.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import Clients from './components/Clients.jsx';
 import Press from './components/Press.jsx';
@@ -37,7 +36,6 @@ export default function App() {
         <main id="top">
           <Hero />
           <Roots />
-          <Projects />
           <Portfolio />
           <Clients />
           <Press />

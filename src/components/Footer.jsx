@@ -4,7 +4,6 @@ const regions = ['Maharashtra', 'Delhi', 'Karnataka', 'Gujarat', 'Telangana', 'T
 const types = ['Corporate Interior', 'Education', 'Bank', 'Hospital', 'Government'];
 const quickLinks = [
   ['#about', 'About Us'],
-  ['#types', 'Projects'],
   ['#clients', 'Clients'],
   ['#press', 'Awards'],
   ['mailto:careers@platinuminfra.in', 'Careers'],
@@ -25,7 +24,7 @@ export default function Footer() {
           <h2>Quick Links</h2>
           <div className="footer-cols">
             <div><h4>Projects by Region</h4><ul>{regions.map(r => <li key={r}>{r}</li>)}</ul></div>
-            <div><h4>Projects by Type</h4><ul>{types.map(t => <li key={t}><a href="#types">{t}</a></li>)}</ul></div>
+            <div><h4>Projects by Type</h4><ul>{types.map(t => <li key={t}><a href="#portfolio">{t}</a></li>)}</ul></div>
             <div><h4>Downloads</h4><ul><li><a href="#" rel="noopener">Corporate Profile</a></li></ul></div>
             <div><h4>Quick Links</h4><ul>{quickLinks.map(([href, label]) => <li key={label}><a href={href}>{label}</a></li>)}</ul></div>
           </div>

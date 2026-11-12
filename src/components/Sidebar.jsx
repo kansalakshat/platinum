@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 const links = [
   ['#top', 'Home'],
   ['#about', 'About Us'],
-  ['#types', 'Projects'],
   ['#portfolio', 'Portfolio'],
   ['#clients', 'Clients'],
   ['#press', 'Press & Awards'],
